@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Problems/A simple calculator" />
+            <option value="$PROJECT_DIR$/Problems/Arithmetic average" />
+            <option value="$PROJECT_DIR$/Problems/Fizz Buzz" />
+            <option value="$PROJECT_DIR$/Problems/Floor-space of the room" />
+            <option value="$PROJECT_DIR$/Problems/Inner boxes" />
+            <option value="$PROJECT_DIR$/Problems/Only true or false" />
+            <option value="$PROJECT_DIR$/Problems/Output the list's elements" />
+            <option value="$PROJECT_DIR$/Problems/Safe converting" />
+            <option value="$PROJECT_DIR$/Problems/The sum of integers from a to b" />
+            <option value="$PROJECT_DIR$/Web Quiz Engine/task" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
