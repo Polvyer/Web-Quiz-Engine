@@ -135,10 +135,10 @@ files:
 - name: src/engine/quiz/QuizService.java
   visible: true
   learner_created: true
-- name: src/engine/quiz/Response.java
+- name: src/engine/quiz/AnswerFormatter.java
   visible: true
   learner_created: true
-- name: src/engine/quiz/Request.java
+- name: src/engine/quiz/Answer.java
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/projects/91/stages/504/implement#comment

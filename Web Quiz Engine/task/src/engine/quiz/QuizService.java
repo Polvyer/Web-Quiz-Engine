@@ -45,7 +45,7 @@ public class QuizService {
         return this.quizzes;
     }
 
-    public boolean solveQuiz(int id, int answer) {
+    public boolean solveQuiz(int id, int[] answer) {
         Iterator<Quiz> iterator = this.quizzes.iterator();
 
         while (iterator.hasNext()) {

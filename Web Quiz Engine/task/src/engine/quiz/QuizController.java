@@ -8,16 +8,22 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.print.attribute.standard.Media;
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
 public class QuizController {
 
-    @Autowired
     private QuizService quizService;
 
-    @RequestMapping(method=RequestMethod.POST, value="/api/quizzes")
-    public Quiz createQuiz(@RequestBody Quiz quiz) {
+    @Autowired
+    public QuizController(QuizService quizService) {
+        this.quizService = quizService;
+    }
+
+    @RequestMapping(method=RequestMethod.POST, value="/api/quizzes", consumes=MediaType.APPLICATION_JSON_VALUE)
+    public Quiz createQuiz(@RequestBody @Valid Quiz quiz) {
         return this.quizService.addQuiz(quiz);
     }
 
@@ -37,8 +43,8 @@ public class QuizController {
         return this.quizService.getAllQuizzes();
     }
 
-    @RequestMapping(method=RequestMethod.POST, value="/api/quizzes/{id}/solve", consumes=MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public Response solveQuiz(Request request, @PathVariable int id)
+    @RequestMapping(method=RequestMethod.POST, value="/api/quizzes/{id}/solve", consumes=MediaType.APPLICATION_JSON_VALUE)
+    public Response solveQuiz(@RequestBody Request request, @PathVariable int id)
             throws IllegalArgumentException, ResponseStatusException {
         if (request == null) {
             throw new IllegalArgumentException("Answer not provided");

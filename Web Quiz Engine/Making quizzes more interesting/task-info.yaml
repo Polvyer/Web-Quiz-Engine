@@ -440,6 +440,266 @@ files:
         }
     }
   learner_created: false
+- name: src/engine/quiz/QuizController.java
+  visible: true
+  text: |
+    package engine.quiz;
+
+    import engine.answer.Response;
+    import engine.answer.Request;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.http.HttpStatus;
+    import org.springframework.http.MediaType;
+    import org.springframework.web.bind.annotation.*;
+    import org.springframework.web.server.ResponseStatusException;
+
+    import java.util.List;
+
+    @RestController
+    public class QuizController {
+
+        private QuizService quizService;
+
+        @Autowired
+        public QuizController(QuizService quizService) {
+            this.quizService = quizService;
+        }
+
+        @RequestMapping(method=RequestMethod.POST, value="/api/quizzes")
+        public Quiz createQuiz(@RequestBody Quiz quiz) {
+            return this.quizService.addQuiz(quiz);
+        }
+
+        @RequestMapping("/api/quizzes/{id}")
+        public Quiz getQuiz(@PathVariable int id) throws ResponseStatusException {
+            Quiz quizFound = this.quizService.findQuizById(id);
+
+            if (quizFound == null) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Quiz not found");
+            }
+
+            return quizFound;
+        }
+
+        @RequestMapping("/api/quizzes")
+        public List<Quiz> getAllQuizzes() {
+            return this.quizService.getAllQuizzes();
+        }
+
+        @RequestMapping(method=RequestMethod.POST, value="/api/quizzes/{id}/solve", consumes=MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+        public Response solveQuiz(Request request, @PathVariable int id)
+                throws IllegalArgumentException, ResponseStatusException {
+            if (request == null) {
+                throw new IllegalArgumentException("Answer not provided");
+            }
+
+            Quiz quiz = this.quizService.findQuizById(id);
+
+            if (quiz == null) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Quiz not found");
+            }
+
+            boolean isCorrect = this.quizService.solveQuiz(id, request.getAnswer());
+
+            return new Response(isCorrect);
+        }
+    }
+  learner_created: true
+- name: src/engine/answer/Request.java
+  visible: true
+  text: |
+    package engine.answer;
+
+    public class Request {
+
+        private int answer;
+
+        public Request() {
+
+        }
+
+        public Request(int answer) {
+            this.answer = answer;
+        }
+
+        public int getAnswer() {
+            return answer;
+        }
+
+        public void setAnswer(int answer) {
+            this.answer = answer;
+        }
+    }
+  learner_created: true
+- name: src/engine/quiz/QuizService.java
+  visible: true
+  text: |
+    package engine.quiz;
+
+    import org.springframework.stereotype.Service;
+
+    import java.util.ArrayList;
+    import java.util.Iterator;
+    import java.util.List;
+
+    @Service
+    public class QuizService {
+
+        private static int idCounter;
+        private List<Quiz> quizzes;
+
+        public QuizService() {
+            this.quizzes = new ArrayList<>();
+            this.idCounter = 0;
+        }
+
+        public void incrementIdCounter() {
+            this.idCounter++;
+        }
+
+        public Quiz addQuiz(Quiz quiz) {
+            this.quizzes.add(quiz);
+            this.incrementIdCounter();
+            quiz.setId(idCounter);
+            return quiz;
+        }
+
+        public Quiz findQuizById(int id) {
+            Iterator<Quiz> iterator = this.quizzes.iterator();
+
+            while (iterator.hasNext()) {
+                Quiz quiz = iterator.next();
+                if (quiz.getId() == id) {
+                    return quiz;
+                }
+            }
+
+            return null;
+        }
+
+        public List<Quiz> getAllQuizzes() {
+            return this.quizzes;
+        }
+
+        public boolean solveQuiz(int id, int answer) {
+            Iterator<Quiz> iterator = this.quizzes.iterator();
+
+            while (iterator.hasNext()) {
+                Quiz quiz = iterator.next();
+                if (quiz.getId() == id) {
+                    return quiz.isCorrectAnswer(answer);
+                }
+            }
+
+            return false;
+        }
+    }
+  learner_created: true
+- name: src/engine/quiz/Quiz.java
+  visible: true
+  text: |
+    package engine.quiz;
+
+    public class Quiz {
+
+        private int id;
+        private String title;
+        private String text;
+        private String[] options;
+        private int answer;
+
+        public Quiz() {
+
+        }
+
+        public Quiz(String title, String text, String[] options, int answer) {
+            this.title = title;
+            this.text = text;
+            this.options = options;
+            this.answer = answer;
+        }
+
+        public boolean isCorrectAnswer(int answer) {
+            return (this.answer == answer);
+        }
+
+        public int getId () {
+            return this.id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public String getText() {
+            return text;
+        }
+
+        public void setText(String text) {
+            this.text = text;
+        }
+
+        public String[] getOptions() {
+            return options;
+        }
+
+        public void setOptions(String[] options) {
+            this.options = options;
+        }
+
+        public void setAnswer(int answer) {
+            this.answer = answer;
+        }
+    }
+  learner_created: true
+- name: src/engine/answer/Response.java
+  visible: true
+  text: |
+    package engine.answer;
+
+    public class Response {
+
+        private boolean success;
+        private String feedback;
+
+        public Response(boolean isCorrect) {
+            if (isCorrect) {
+                this.success = true;
+                this.feedback = "Congratulations, you're right!";
+            } else {
+                this.success = false;
+                this.feedback = "Wrong answer! Please, try again.";
+            }
+        }
+
+        public boolean getSuccess() {
+            return success;
+        }
+
+        public void setSuccess(boolean success) {
+            this.success = success;
+        }
+
+        public String getFeedback() {
+            return feedback;
+        }
+
+        public void setFeedback(String feedback) {
+            this.feedback = feedback;
+        }
+    }
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/91/stages/506/implement#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 13 Mar 2021 03:43:20 UTC
+record: 3
