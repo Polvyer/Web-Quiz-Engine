@@ -774,6 +774,12 @@ files:
         }
     }
   learner_created: true
+- name: src/engine/quiz/QuizRepository.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/91/stages/507/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sun, 14 Mar 2021 09:12:10 UTC
 record: 4

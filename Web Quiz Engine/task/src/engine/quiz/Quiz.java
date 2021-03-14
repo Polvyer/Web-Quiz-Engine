@@ -1,32 +1,39 @@
 package engine.quiz;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+@Entity
 public class Quiz {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private int id;
+
     @NotBlank(message = "Title not found")
     private String title;
+
     @NotBlank(message = "Text not found")
     private String text;
+
     @NotNull(message = "Options should contain at least 2 items")
     @Size(min = 2, message = "Options should contain at least 2 items")
-    private String[] options;
-    private int[] answer;
+    @ElementCollection
+    private List<String> options;
+
+    @ElementCollection
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private List<Integer> answer;
 
     public Quiz() {
-
-    }
-
-    public Quiz(String title, String text, String[] options, int[] answer) {
-        this.title = title;
-        this.text = text;
-        this.options = options;
-        this.answer = answer;
     }
 
     private Map<Integer, Integer> getAnswerInMap() {
@@ -55,7 +62,7 @@ public class Quiz {
     }
 
     private int answerSize() {
-        return this.answer == null ? 0 : this.answer.length;
+        return this.answer == null ? 0 : this.answer.size();
     }
 
     public boolean isCorrectAnswer(int[] answer) {
@@ -67,7 +74,7 @@ public class Quiz {
             return (answerSize() == 0);
         }
 
-        if (this.answer.length != answer.length) {
+        if (this.answer.size() != answer.length) {
             return false;
         }
 
@@ -98,15 +105,21 @@ public class Quiz {
         this.text = text;
     }
 
-    public String[] getOptions() {
+    public List<String> getOptions() {
         return options;
     }
 
-    public void setOptions(String[] options) {
+    public List<Integer> getAnswer() { return answer; }
+
+    public void setOptions(List<String> options) {
         this.options = options;
     }
 
-    public void setAnswer(int[] answer) {
+    public void setAnswer(List<Integer> answer) {
         this.answer = answer;
+    }
+
+    public String toString() {
+        return "Id: " + this.id;
     }
 }

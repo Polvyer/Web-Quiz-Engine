@@ -8,7 +8,7 @@
 
 <h4>Create a new quiz</h4>
 
-<p>To create a new quiz, the client needs to send a JSON as the request's body via <code class="language-json">POST</code> to <code class="language-json">/api/quizzes</code>. The JSON should contain the four fields: <code class="language-json">title</code> (a string), <code class="language-json">text</code> (a string), <code class="language-json">options</code> (an array of strings) and <code class="language-json">answer</code> (integer index of the correct option). At this moment, all the keys are optional.</p>
+<p>To create a new quiz, the client needs to send a JSON as the request's body via <code class="language-json">POST</code> to <code class="language-json">/api/quizzes</code>. The JSON should contain the four fields: <code class="language-json">title</code> (a string), <code class="language-json">text</code> (a string), <code class="language-json">options</code> (an array of strings) and <code class="language-json">answer</code> (integer index of the correct engine.option). At this moment, all the keys are optional.</p>
 
 <p>Here is a new JSON quiz as an example:</p>
 
@@ -80,7 +80,7 @@
 
 <h4>Solving a quiz</h4>
 
-<p>To solve the quiz, the client sends a POST request to <code class="language-json">/api/quizzes/{id}/solve</code> and passes the <code class="language-json">answer</code> parameter in the content. This parameter is the index of a chosen option from <code class="language-json">options</code> array. As before, it starts from zero.</p>
+<p>To solve the quiz, the client sends a POST request to <code class="language-json">/api/quizzes/{id}/solve</code> and passes the <code class="language-json">answer</code> parameter in the content. This parameter is the index of a chosen engine.option from <code class="language-json">options</code> array. As before, it starts from zero.</p>
 
 <p>The service returns a JSON with two fields: <code class="language-json">success</code> (<code class="language-json">true</code> or <code class="language-json">false</code>) and <code class="language-json">feedback</code> (just a string). There are three possible responses.</p>
 

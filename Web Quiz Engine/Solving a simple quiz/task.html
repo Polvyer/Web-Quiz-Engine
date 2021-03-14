@@ -26,13 +26,13 @@
   "options": ["Robot","Tea leaf","Cup of coffee","Bug"]
 }</code></pre>
 
-<p>In your API, the names of attributes must be exactly the same (<code class="language-json">title</code>, <code class="language-json">text</code>, <code class="language-json">options</code>), but you can assign any values to them. The quiz should contain four items in the <code class="language-json">options</code> array. The correct answer must be the <strong>third option</strong>, but since the indexes start from zero, <strong>its index is 2</strong>.</p>
+<p>In your API, the names of attributes must be exactly the same (<code class="language-json">title</code>, <code class="language-json">text</code>, <code class="language-json">options</code>), but you can assign any values to them. The quiz should contain four items in the <code class="language-json">options</code> array. The correct answer must be the <strong>third engine.option</strong>, but since the indexes start from zero, <strong>its index is 2</strong>.</p>
 
 <p><div class="alert alert-primary">There is no need to force your server to respond a JSON with line breaks and additional spaces. This is used only to demonstrate the response in a human-readable format. Actually, your server returns a long single-line JSON: <code class="language-json">{"title":"The Java Logo","text":"What is depicted on the Java logo?","options":["Robot","Tea leaf","Cup of coffee","Bug"]}</code>.</div></p>
 
 <h4>Solve the quiz</h4>
 
-<p>To solve the quiz, the client needs to pass the <code class="language-json">answer</code> parameter using the <code class="language-json">POST</code> request to <code class="language-json">/api/quiz</code> with content as parameter <code class="language-json">answer</code> and value. This parameter is the index of a chosen option from <code class="language-json">options</code> array. We suppose that in our service, indexes start from zero.</p>
+<p>To solve the quiz, the client needs to pass the <code class="language-json">answer</code> parameter using the <code class="language-json">POST</code> request to <code class="language-json">/api/quiz</code> with content as parameter <code class="language-json">answer</code> and value. This parameter is the index of a chosen engine.option from <code class="language-json">options</code> array. We suppose that in our service, indexes start from zero.</p>
 
 <p>The server should return JSON with two fields: <code class="language-json">success</code> (<code class="language-json">true</code> or <code class="language-json">false</code>) and <code class="language-json">feedback</code> (just a string). There are two possible responses from the server:</p>
 

@@ -6,13 +6,9 @@ public class Response {
     private String feedback;
 
     public Response(boolean isCorrect) {
-        if (isCorrect) {
-            this.success = true;
-            this.feedback = "Congratulations, you're right!";
-        } else {
-            this.success = false;
-            this.feedback = "Wrong answer! Please, try again.";
-        }
+        this.success = isCorrect;
+        this.feedback = isCorrect ? "Congratulations, you're right!"
+                : "Wrong answer! Please, try again.";
     }
 
     public boolean getSuccess() {
