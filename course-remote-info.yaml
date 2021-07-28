@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/287312/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: Sun, 14 Mar 2021 04:33:15 UTC
+update_date: Wed, 28 Jul 2021 16:16:02 UTC
 stages:
 - id: 504
   step: 8252
@@ -19,36 +19,32 @@ stages:
   is_completed: true
 - id: 508
   step: 8256
-  is_completed: false
+  is_completed: true
 - id: 509
   step: 8257
-  is_completed: false
+  is_completed: true
 topics:
   0:
+  - title: Write, compile, and run
+    theory_id: 3739
+  - title: JVM, JRE, and JDK
+    theory_id: 3499
   - title: Immutability
     theory_id: 7929
   - title: Units of information
     theory_id: 6865
-  - title: Introduction to operating systems
-    theory_id: 9704
   - title: IDE
     theory_id: 10996
   - title: Computer algorithms
     theory_id: 4953
-  - title: Introducing the first algorithm
-    theory_id: 10336
   - title: The big O notation
-    theory_id: 4991
+    theory_id: 13991
   - title: Data structures
     theory_id: 5161
   - title: Fixed-size array
     theory_id: 7255
   - title: Dynamic array
     theory_id: 5357
-  - title: Command line overview
-    theory_id: 8977
-  - title: Parameters and options
-    theory_id: 9746
   - title: World Wide Web
     theory_id: 6633
   - title: HyperText Transfer Protocol
@@ -59,20 +55,32 @@ topics:
     theory_id: 6752
   - title: REST
     theory_id: 7834
+  - title: HTML basics
+    theory_id: 6434
+  - title: Tags and attributes
+    theory_id: 7536
+  - title: HTML page structure
+    theory_id: 6491
   - title: Introduction to Spring boot
     theory_id: 7944
+  - title: Postman
+    theory_id: 8512
+  - title: Introduction to operating systems
+    theory_id: 9704
   - title: Getting started with Spring Boot
     theory_id: 6336
   - title: Basic project structure
     theory_id: 6339
-  - title: Rest controller
-    theory_id: 7015
-  - title: Postman
-    theory_id: 8512
-  - title: Introduction to OOP
-    theory_id: 3614
+  - title: Introduction to Spring Web MVC
+    theory_id: 13611
+  - title: Getting data from REST
+    theory_id: 13287
+  - title: Posting and deleting data via REST
+    theory_id: 13292
   - title: External resources
     theory_id: 6216
+  - title: Computer programming
+    theory_id: 8739
   - title: Introduction to Java
     theory_id: 3500
   - title: Basic literals
@@ -91,6 +99,8 @@ topics:
     theory_id: 3513
   - title: Scanning the input
     theory_id: 9055
+  - title: Introduction to OOP
+    theory_id: 3614
   - title: Arithmetic operations
     theory_id: 3519
   - title: Integer types and operations
@@ -115,20 +125,10 @@ topics:
     theory_id: 3507
   - title: Switch statement
     theory_id: 3504
-  - title: Write, compile, and run
-    theory_id: 3739
-  - title: JVM, JRE, and JDK
-    theory_id: 3499
-  - title: Errors in programs
-    theory_id: 3536
-  - title: What is an exception
-    theory_id: 3497
-  - title: NPE
-    theory_id: 1945
-  - title: Build tools
-    theory_id: 4284
   - title: JSON
     theory_id: 6854
+  - title: YAML
+    theory_id: 12722
   - title: Sizes and ranges
     theory_id: 3532
   - title: Type casting
@@ -161,6 +161,18 @@ topics:
     theory_id: 7427
   - title: IntelliJ IDEA
     theory_id: 3801
+  - title: Command line overview
+    theory_id: 8977
+  - title: Parameters and options
+    theory_id: 9746
+  - title: Errors in programs
+    theory_id: 3536
+  - title: What is an exception
+    theory_id: 3497
+  - title: NPE
+    theory_id: 1945
+  - title: Build tools
+    theory_id: 4284
   - title: Java Archive
     theory_id: 4311
   - title: Gradle basics
@@ -173,10 +185,16 @@ topics:
     theory_id: 5076
   - title: Introduction to generic programming
     theory_id: 3492
+  - title: Generics and Object
+    theory_id: 3493
   - title: What are collections
     theory_id: 3770
   - title: ArrayList
     theory_id: 3567
+  - title: The Collections Framework overview
+    theory_id: 3624
+  - title: The List interface
+    theory_id: 3581
   - title: Defining classes
     theory_id: 3618
   - title: Constructor
@@ -195,53 +213,49 @@ topics:
     theory_id: 3583
   - title: The keyword super
     theory_id: 3588
-  - title: Annotations basics
-    theory_id: 3622
-  - title: Objects
-    theory_id: 4727
-  - title: Boxing and unboxing
-    theory_id: 3595
-  - title: Static members
-    theory_id: 3534
-  - title: Hiding and overriding
-    theory_id: 3572
-  1:
-  - title: Passing JSON to server
-    theory_id: 7165
-  - title: Beans and components
-    theory_id: 7353
-  - title: 'Hashing: overview'
-    theory_id: 9831
-  - title: Hash table
-    theory_id: 5364
-  - title: Hierarchy of exceptions
-    theory_id: 3570
-  - title: Exception handling
-    theory_id: 3552
-  - title: Generics and Object
-    theory_id: 3493
-  - title: The Collections Framework overview
-    theory_id: 3624
-  - title: The List interface
-    theory_id: 3581
-  - title: The Set interface
-    theory_id: 3575
-  - title: The Map interface
-    theory_id: 3558
   - title: Protected modifier
     theory_id: 6692
   - title: Referencing subclass objects
     theory_id: 3585
   - title: The Object class
     theory_id: 3596
-  - title: Polymorphism
-    theory_id: 3587
+  - title: Annotations basics
+    theory_id: 3622
+  - title: Objects
+    theory_id: 4727
+  - title: Static members
+    theory_id: 3534
+  - title: Hiding and overriding
+    theory_id: 3572
   - title: Interface
     theory_id: 3615
+  - title: Comparable
+    theory_id: 14456
+  - title: Boxing and unboxing
+    theory_id: 3595
+  1:
+  - title: 'Hashing: overview'
+    theory_id: 9831
+  - title: Hash function
+    theory_id: 10878
+  - title: Hash table
+    theory_id: 13054
+  - title: Beans and components
+    theory_id: 7353
+  - title: Handling requests with bodies
+    theory_id: 13334
+  - title: Hierarchy of exceptions
+    theory_id: 3570
+  - title: Exception handling
+    theory_id: 3552
+  - title: The Set interface
+    theory_id: 3575
+  - title: The Map interface
+    theory_id: 3558
   2:
   - title: Exception handling
     theory_id: 8780
-  - title: Bean Validation
+  - title: Bean validation
     theory_id: 9355
   - title: Regexps basics
     theory_id: 7580
@@ -256,22 +270,44 @@ topics:
   - title: Regexes in programs
     theory_id: 3696
   3:
+  - title: The concept of patterns
+    theory_id: 3611
   - title: Files
-    theory_id: 6989
+    theory_id: 13025
   - title: Introduction to databases
     theory_id: 8497
+  - title: Relational Data Model
+    theory_id: 13785
   - title: What is SQL
     theory_id: 7054
   - title: H2 database
     theory_id: 8762
   - title: Introduction to JPA
     theory_id: 8771
-  - title: JPA Relationships
+  - title: JPA relationships
     theory_id: 8936
+  - title: CRUD repositories
+    theory_id: 9536
+  - title: Application layers
+    theory_id: 13971
   - title: Data and object mapping
     theory_id: 8262
   - title: Object-Relational Mapping (ORM)
     theory_id: 8312
+  - title: Lambda expressions
+    theory_id: 11635
+  - title: Method references
+    theory_id: 3620
+  - title: Functional interfaces
+    theory_id: 11636
+  - title: Standard functional interfaces
+    theory_id: 3623
+  - title: Optional
+    theory_id: 9699
+  - title: Default methods
+    theory_id: 11354
+  - title: Anonymous classes
+    theory_id: 11896
   5:
   - title: Lambda expressions
     theory_id: 11635
@@ -283,3 +319,14 @@ topics:
     theory_id: 11354
   - title: Anonymous classes
     theory_id: 11896
+  4:
+  - title: Getting started with Spring Security
+    theory_id: 13856
+  - title: Authentication
+    theory_id: 14353
+  - title: Authentication and Authorization
+    theory_id: 14219
+  - title: Polymorphism
+    theory_id: 3587
+  - title: Abstract class
+    theory_id: 3597

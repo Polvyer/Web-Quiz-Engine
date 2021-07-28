@@ -557,7 +557,7 @@ files:
         }
     }
   learner_created: true
-- name: src/engine/quiz/QuizService.java
+- name: src/engine/quiz/QuizServiceImpl.java
   visible: true
   text: |
     package engine.quiz;
@@ -737,7 +737,7 @@ files:
         }
     }
   learner_created: true
-- name: src/engine/answer/Response.java
+- name: src/engine/answer/QuizAnswerResponse.java
   visible: true
   text: |
     package engine.answer;
@@ -777,9 +777,12 @@ files:
 - name: src/engine/quiz/QuizRepository.java
   visible: true
   learner_created: true
+- name: src/engine/user/User.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/91/stages/507/implement#comment
 status: Solved
 feedback:
   message: Congratulations!
-  time: Sun, 14 Mar 2021 09:12:10 UTC
+  time: Sun, 11 Jul 2021 03:25:36 UTC
 record: 4

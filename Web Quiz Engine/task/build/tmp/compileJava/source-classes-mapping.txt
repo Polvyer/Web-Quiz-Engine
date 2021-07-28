@@ -1,14 +1,30 @@
+engine/repository/UserRepository.java
+ engine.repository.UserRepository
+engine/service/MyUserDetailsService.java
+ engine.service.MyUserDetailsService
+engine/entity/User.java
+ engine.entity.User
+engine/service/QuizService.java
+ engine.service.QuizService
+engine/controller/QuizController.java
+ engine.controller.QuizController
+engine/config/UserConfiguration.java
+ engine.config.UserConfiguration
 engine/WebQuizEngine.java
  engine.WebQuizEngine
-engine/quiz/QuizRepository.java
- engine.quiz.QuizRepository
-engine/answer/Request.java
- engine.answer.Request
-engine/quiz/Quiz.java
- engine.quiz.Quiz
-engine/answer/Response.java
- engine.answer.Response
-engine/quiz/QuizService.java
- engine.quiz.QuizService
-engine/quiz/QuizController.java
- engine.quiz.QuizController
+engine/repository/QuizRepository.java
+ engine.repository.QuizRepository
+engine/controller/UserController.java
+ engine.controller.UserController
+engine/entity/Quiz.java
+ engine.entity.Quiz
+engine/user/MyUserDetails.java
+ engine.user.MyUserDetails
+engine/dto/QuizAnswerRequest.java
+ engine.dto.QuizAnswerRequest
+engine/security/WebSecurityConfig.java
+ engine.security.WebSecurityConfig
+engine/dto/Response.java
+ engine.dto.Response
+engine/service/UserService.java
+ engine.service.UserService

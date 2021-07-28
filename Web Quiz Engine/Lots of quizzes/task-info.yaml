@@ -274,7 +274,7 @@ files:
 
     }
   learner_created: true
-- name: src/engine/quiz/QuizService.java
+- name: src/engine/quiz/QuizServiceImpl.java
   visible: true
   text: |
     package engine.quiz;
@@ -354,12 +354,12 @@ files:
 - name: src/engine/answer/Request.java
   visible: true
   learner_created: true
-- name: src/engine/answer/Response.java
+- name: src/engine/answer/QuizAnswerResponse.java
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/projects/91/stages/505/implement#comment
 status: Solved
 feedback:
   message: Congratulations!
-  time: Fri, 12 Mar 2021 21:19:03 UTC
+  time: Sun, 11 Jul 2021 03:12:12 UTC
 record: 2
